@@ -1,4 +1,17 @@
-# Array Synchronization
+# Arrays
+
+## `joined`
+
+```swift
+var someArray = ["one", "two", "three"]
+someArray.joined(separator: ", ") // "one, two, three"
+```
+
+# Threads
+
+## Synchronization
+
+### Arrays
 
 ```swift
 class SynchronizedArray<T>
@@ -21,7 +34,7 @@ class SynchronizedArray<T>
 
 var array = SynchronizedArray(["one", "two", "three"])
 
-print(array[1])
+print(array[1]) // two
 array[1] = "dos"
-print(array[1])
+print(array[1]) // dos
 ```
