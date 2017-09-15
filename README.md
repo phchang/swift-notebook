@@ -1,12 +1,14 @@
 # Array Synchronization
 
 ```swift
-class SynchronizedArray<T> {
-    
+class SynchronizedArray<T>
+{
     private let syncQueue: DispatchQueue
     private var array: [T]
     
-    init(_ array: [T], syncQueue: DispatchQueue = DispatchQueue(label: "synchronization-queue-\(UUID().uuidString)")) {
+    init(_ array: [T],
+         syncQueue: DispatchQueue = DispatchQueue(label: "sync-queue-\(UUID().uuidString)")) {
+        
         self.array = array
         self.syncQueue = syncQueue
     }
