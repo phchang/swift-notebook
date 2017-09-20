@@ -7,6 +7,51 @@ var someArray = ["one", "two", "three"]
 someArray.joined(separator: ", ") // "one, two, three"
 ```
 
+# Strings
+
+## Displaying Rounded Numbers
+
+### `String(format: String, _ arguments: CVarArg...)`
+
+```swift
+/*
+
+  Syntax for format placeholder:
+
+  `[parameter][flags][width][.precision][length]type`
+
+  width:
+    - minimum number of characters to output
+    - a leading zero is interpreted as the zero-padding flag
+
+  precision:
+    - maximum limit on the output
+    - for floating point types specifies number of digits (rounded)
+
+ */
+let rounded = String(format: "%.2f", 3.14159)
+print(rounded) // 3.14
+
+let negativeValue = String(format: "%.0f", -16.5)
+print(negativeValue) // -16
+```
+[printf format placeholder specification][round-1]
+
+### `lround`
+
+`lround` works similarly, however it rounds halfway cases away from zero. Using a string formmater
+is probably the preferred approach.
+
+[How to round a Double to the nearest Int in swift?][round-2]
+
+
+```swift
+print(lround(-16.5)) // -17
+```
+
+[round-1]:https://en.wikipedia.org/wiki/Printf_format_string#Format_placeholder_specification
+[round-2]:https://stackoverflow.com/questions/26350977/how-to-round-a-double-to-the-nearest-int-in-swift
+
 # Threads
 
 ## Synchronization
