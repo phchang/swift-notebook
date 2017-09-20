@@ -15,7 +15,6 @@ someArray.joined(separator: ", ") // "one, two, three"
 
 ```swift
 /*
-
   Syntax for format placeholder:
 
   `[parameter][flags][width][.precision][length]type`
@@ -27,13 +26,9 @@ someArray.joined(separator: ", ") // "one, two, three"
   precision:
     - maximum limit on the output
     - for floating point types specifies number of digits (rounded)
-
  */
-let rounded = String(format: "%.2f", 3.14159)
-print(rounded) // 3.14
-
-let negativeValue = String(format: "%.0f", -16.5)
-print(negativeValue) // -16
+print(String(format: "%.2f", 3.14159)) // 3.14
+print(String(format: "%.0f", -16.5)) // -16
 ```
 [printf format placeholder specification][round-1]
 
