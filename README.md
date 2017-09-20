@@ -15,9 +15,7 @@ someArray.joined(separator: ", ") // "one, two, three"
 
 ```swift
 /*
-  Syntax for format placeholder:
-
-  `[parameter][flags][width][.precision][length]type`
+  Format placeholder syntax: `[parameter][flags][width][.precision][length]type`
 
   width:
     - minimum number of characters to output
@@ -30,14 +28,14 @@ someArray.joined(separator: ", ") // "one, two, three"
 print(String(format: "%.2f", 3.14159)) // 3.14
 print(String(format: "%.0f", -16.5)) // -16
 ```
-[printf format placeholder specification][round-1]
+Full reference: [printf format placeholder specification][round-1]
 
 ### `lround`
 
 `lround` works similarly, however it rounds halfway cases away from zero. Using a string formmater
 is probably the preferred approach.
 
-[How to round a Double to the nearest Int in swift?][round-2]
+See: [How to round a Double to the nearest Int in swift?][round-2]
 
 
 ```swift
