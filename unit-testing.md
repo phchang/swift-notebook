@@ -20,9 +20,9 @@ An alternative is to have a protocol that the `NSManagedObject` subclass conform
 
 protocol EmployeeType
 {
-		var firstName: String? { get set }
-		var lastName: String? { get set }
-		var employeeUUID: String? { get set }
+    var firstName: String? { get set }
+    var lastName: String? { get set }
+    var employeeUUID: String? { get set }
 }
 
 @objc(EmployeeManagedObject)
@@ -35,11 +35,11 @@ class EmployeeManagedObject: NSManagedObject
 
 class MockEmployee: EmployeeType
 {
-		var firstName: String?
-		var lastName: String?
-		var employeeUUID: String?
+    var firstName: String?
+    var lastName: String?
+    var employeeUUID: String?
 
-		init() {}
+    init() {}
 }
 
 let mock = MockEmployee()
