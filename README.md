@@ -7,6 +7,30 @@ var someArray = ["one", "two", "three"]
 someArray.joined(separator: ", ") // "one, two, three"
 ```
 
+# Numbers
+
+## Double value from an `Any` that could be an `Int` or a `Double`
+
+When parsing JSON (as a `Dictionary`), I came across a situation where a value from an API could be either an `Int` or a `Double`, and I always want to treat it as a `Double`.
+
+```
+let json: Dictionary<String, Any> = ["key" : 1]
+let doubleVal = json["key"] as? Double
+print(doubleVal) // nil
+```
+
+A way around this is to attempt to cast `as? NSNumber` and access the `doubleValue` property:
+
+```
+var json: Dictionary<String, Any> = ["key" : 1]
+var number = json["key"] as? NSNumber
+print(number?.doubleValue) // 1.0
+
+json["key"] = 1.0
+number = json["key"] as? NSNumber
+print(number?.doubleValue) // 1.0
+```
+
 # Strings
 
 ## Displaying Rounded Numbers
